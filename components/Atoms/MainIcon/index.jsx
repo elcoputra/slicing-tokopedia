@@ -3,7 +3,12 @@ import PropTypes from "prop-types";
 
 import { Icon } from "@/components/Atoms/MainIcon/style";
 
-function MainIcon({ icon = "mail", size = "sm", marginRight = 0 }) {
+function MainIcon({
+  icon = "bucket",
+  size = "sm",
+  marginRight = 0,
+  testId = "",
+}) {
   const [iconSize, setIconSize] = useState({ width: 20, height: 20 });
   const [iconPosition, setIconPosition] = useState({ x: 0, y: 0 });
 
@@ -22,7 +27,12 @@ function MainIcon({ icon = "mail", size = "sm", marginRight = 0 }) {
         setIconSize({ width: 100, height: 100 });
         break;
       default:
-        setIconSize({ width: size.x, height: size.y });
+        if (size?.x && size?.y) {
+          setIconSize({ width: size.x, height: size.y });
+        } else {
+          setIconSize({ width: 20, height: 20 });
+        }
+
         break;
     }
   }, [size]);
@@ -48,12 +58,14 @@ function MainIcon({ icon = "mail", size = "sm", marginRight = 0 }) {
         setIconPosition({ x: 100, y: 100 });
         break;
       default:
+        setIconPosition({ x: 0, y: 0 });
         break;
     }
   }, [icon]);
 
   return (
     <Icon
+      data-testid={"MainIcon-" + icon + "-" + size}
       imageUrl="/assets/icons/main-1.svg"
       iconSize={iconSize}
       iconPosition={iconPosition}
@@ -71,14 +83,12 @@ MainIcon.propTypes = {
     "gear",
     "arrowDown",
   ]),
-  size: PropTypes.oneOf([
-    "sm",
-    "md",
-    "lg",
-    "xl",
-    { x: PropTypes.number, y: PropTypes.number },
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+    PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
   ]),
   marginRight: PropTypes.number,
+  testId: PropTypes.string,
 };
 
 export default MainIcon;

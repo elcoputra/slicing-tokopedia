@@ -12,6 +12,7 @@ function Link({
 }) {
   return (
     <StyledLink
+      data-testid={"StyledLink"}
       href={href}
       marginLeft={marginLeft}
       marginRight={marginRight}
