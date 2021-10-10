@@ -14,6 +14,7 @@ describe("Testing components/Atoms/MainIcon", () => {
         { icon: "phone", position: { x: 60, y: 60 } },
         { icon: "gear", position: { x: 80, y: 80 } },
         { icon: "arrowDown", position: { x: 100, y: 100 } },
+        { icon: null, position: { x: 0, y: 0 } },
       ];
       icons.map((item, index) => {
         render(<MainIcon icon={item.icon} size="sm" />);
@@ -33,6 +34,7 @@ describe("Testing components/Atoms/MainIcon", () => {
         { size: "md", width: 35, height: 35 },
         { size: "lg", width: 60, height: 60 },
         { size: "xl", width: 100, height: 100 },
+        { size: null, width: 20, height: 20 },
       ];
       size.map((item, index) => {
         render(<MainIcon icon="bucket" size={item.size} />);
@@ -43,6 +45,14 @@ describe("Testing components/Atoms/MainIcon", () => {
           width: item.width + "px",
           height: item.height + "px",
         });
+      });
+      render(<MainIcon icon="bucket" size={{ x: 20, y: 20 }} />);
+      const element = screen.getByTestId(
+        "MainIcon-" + "bucket" + "-" + { x: 20, y: 20 }
+      );
+      expect(element).toHaveStyle({
+        width: "20px",
+        height: "20px",
       });
     });
   });

@@ -27,7 +27,12 @@ function MainIcon({
         setIconSize({ width: 100, height: 100 });
         break;
       default:
-        setIconSize({ width: size.x || 20, height: size.y || 20 });
+        if (size?.x && size?.y) {
+          setIconSize({ width: size.x, height: size.y });
+        } else {
+          setIconSize({ width: 20, height: 20 });
+        }
+
         break;
     }
   }, [size]);
@@ -78,12 +83,9 @@ MainIcon.propTypes = {
     "gear",
     "arrowDown",
   ]),
-  size: PropTypes.oneOf([
-    "sm",
-    "md",
-    "lg",
-    "xl",
-    { x: PropTypes.number, y: PropTypes.number },
+  size: PropTypes.oneOfType([
+    PropTypes.oneOf(["sm", "md", "lg", "xl"]),
+    PropTypes.shape({ x: PropTypes.number, y: PropTypes.number }),
   ]),
   marginRight: PropTypes.number,
   testId: PropTypes.string,

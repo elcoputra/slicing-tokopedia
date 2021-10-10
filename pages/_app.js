@@ -1,5 +1,5 @@
 import "styles/globals.css";
-import { theme } from "styles/emotionTheme";
+import { theme } from "@/styles/emotionTheme";
 import PropTypes from "prop-types";
 
 import {ThemeProvider } from "@emotion/react";
