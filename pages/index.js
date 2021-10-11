@@ -29,6 +29,7 @@ export default function Home() {
             size="sm"
             floating={{ position: "rb" }}
             alt="float-image-kotak-hadiah"
+            href="/"
           />
         )}
       />

@@ -16,6 +16,7 @@ function Image({
   position = "fixed",
   zIndex = 50,
   dataTestId = { container: "", nextImage: "" },
+  href = "",
 }) {
   const [sizeState, setSizeState] = useState({ x: "100px", y: "100px" });
   const [precision, setPrecision] = useState({
@@ -94,6 +95,7 @@ function Image({
           borderradius={borderradius}
           width={sizeState.x}
           height={sizeState.y}
+          href={href}
         >
           <NextImage
             data-testid={`Next/Image-${dataTestId.nextImage}`}
@@ -136,6 +138,7 @@ Image.propTypes = {
   withContainer: PropTypes.bool,
   unit: PropTypes.string,
   position: PropTypes.string,
+  href: PropTypes.string,
   zIndex: PropTypes.number,
   dataTestId: PropTypes.shape({
     container: PropTypes.string,
