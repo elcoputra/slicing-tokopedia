@@ -8,6 +8,7 @@ function Container({
   maxWidth = 0,
   width = "100%",
   direction = "column",
+  height,
 }) {
   return (
     <Wrapper
@@ -16,6 +17,7 @@ function Container({
       maxWidth={maxWidth}
       width={width}
       direction={direction}
+      height={height}
     >
       {children}
     </Wrapper>
@@ -23,10 +25,11 @@ function Container({
 }
 
 Container.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.node,
   maxWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.oneOf(["none"])]),
   width: PropTypes.string,
   direction: PropTypes.string,
+  height: PropTypes.string,
 };
 
 export default Container;

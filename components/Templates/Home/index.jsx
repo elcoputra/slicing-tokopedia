@@ -6,77 +6,105 @@ import { StyledMain } from "@/components/Templates/Home/style";
 import AtomContainer from "@/components/Atoms/Container";
 
 function HomeTemplate({
-  Header = () => <></>,
-  FloatingImage = () => <></>,
-  SectionOne = () => <></>,
-  SectionTwo = () => <></>,
-  SectionThree = () => <></>,
-  SectionFour = () => <></>,
-  SectionFive = () => <></>,
-  SectionSix = () => <></>,
-  SectionSeven = () => <></>,
-  SectionEight = () => <></>,
-  SectionNine = () => <></>,
-  SectionTen = () => <></>,
-  SectionEleven = () => <></>,
-  SectionTwelve = () => <></>,
-  SectionThirteen = () => <></>,
-  SectionFourteen = () => <></>,
-  Footer = () => <></>,
+  Header,
+  FloatingImage,
+  SectionOne,
+  SectionTwo,
+  SectionThree,
+  SectionFour,
+  SectionFive,
+  SectionSix,
+  SectionSeven,
+  SectionEight,
+  SectionNine,
+  SectionTen,
+  SectionEleven,
+  SectionTwelve,
+  SectionThirteen,
+  SectionFourteen,
+  Footer,
 }) {
   return (
     <>
-      <Header />
+      {Header && <Header />}
       <StyledMain>
-        <FloatingImage />
-        <AtomContainer maxWidth={73}>
+        {FloatingImage && <FloatingImage />}
+        <AtomContainer maxWidth={75.4}>
           <>
-            <section id="section-1">
-              <SectionOne />
-            </section>
-            <section id="section-2">
-              <SectionTwo />
-            </section>
-            <section id="section-3">
-              <SectionThree />
-            </section>
-            <section id="section-4">
-              <SectionFour />
-            </section>
-            <section id="section-5">
-              <SectionFive />
-            </section>
-            <section id="section-6">
-              <SectionSix />
-            </section>
-            <section id="section-7">
-              <SectionSeven />
-            </section>
-            <section id="section-8">
-              <SectionEight />
-            </section>
-            <section id="section-9">
-              <SectionNine />
-            </section>
-            <section id="section-10">
-              <SectionTen />
-            </section>
-            <section id="section-11">
-              <SectionEleven />
-            </section>
-            <section id="section-12">
-              <SectionTwelve />
-            </section>
-            <section id="section-13">
-              <SectionThirteen />
-            </section>
-            <section id="section-14">
-              <SectionFourteen />
-            </section>
+            {SectionOne && (
+              <section id="section-1">
+                <SectionOne />
+              </section>
+            )}
+            {SectionTwo && (
+              <section id="section-2">
+                <SectionTwo />
+              </section>
+            )}
+            {SectionThree && (
+              <section id="section-3">
+                <SectionThree />
+              </section>
+            )}
+            {SectionFour && (
+              <section id="section-4">
+                <SectionFour />
+              </section>
+            )}
+            {SectionFive && (
+              <section id="section-5">
+                <SectionFive />
+              </section>
+            )}
+            {SectionSix && (
+              <section id="section-6">
+                <SectionSix />
+              </section>
+            )}
+            {SectionSeven && (
+              <section id="section-7">
+                <SectionSeven />
+              </section>
+            )}
+            {SectionEight && (
+              <section id="section-8">
+                <SectionEight />
+              </section>
+            )}
+            {SectionNine && (
+              <section id="section-9">
+                <SectionNine />
+              </section>
+            )}
+            {SectionTen && (
+              <section id="section-10">
+                <SectionTen />
+              </section>
+            )}
+            {SectionEleven && (
+              <section id="section-11">
+                <SectionEleven />
+              </section>
+            )}
+            {SectionTwelve && (
+              <section id="section-12">
+                <SectionTwelve />
+              </section>
+            )}
+            {SectionThirteen && (
+              <section id="section-13">
+                <SectionThirteen />
+              </section>
+            )}
+            {SectionFourteen && (
+              <section id="section-14">
+                <SectionFourteen />
+              </section>
+            )}
           </>
         </AtomContainer>
       </StyledMain>
-      <Footer />
+      {Footer && <Footer />}
     </>
   );
 }

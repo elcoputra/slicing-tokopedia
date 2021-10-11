@@ -14,9 +14,10 @@ function AdditionalLinkHeader({
   icon,
   iconSize,
   direction = "row",
+  position = "relative",
 }) {
   return (
-    <Wrapper>
+    <Wrapper position={position}>
       <AtomContainer maxWidth="none" direction={direction}>
         <>
           <MoleculesLinkWithIcon
@@ -51,6 +52,7 @@ AdditionalLinkHeader.propTypes = {
   icon: PropTypes.string,
   iconSize: PropTypes.string,
   direction: PropTypes.string,
+  position: PropTypes.string,
 };
 
 export default AdditionalLinkHeader;

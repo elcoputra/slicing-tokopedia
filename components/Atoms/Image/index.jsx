@@ -17,6 +17,7 @@ function Image({
   zIndex = 50,
   dataTestId = { container: "", nextImage: "" },
   href = "",
+  ...allAttribute
 }) {
   const [sizeState, setSizeState] = useState({ x: "100px", y: "100px" });
   const [precision, setPrecision] = useState({
@@ -96,6 +97,7 @@ function Image({
           width={sizeState.x}
           height={sizeState.y}
           href={href}
+          {...allAttribute}
         >
           <NextImage
             data-testid={`Next/Image-${dataTestId.nextImage}`}
@@ -111,6 +113,7 @@ function Image({
           alt={alt}
           layout={layout || "fill"}
           borderradius={borderradius}
+          {...allAttribute}
         />
       )}
     </>
