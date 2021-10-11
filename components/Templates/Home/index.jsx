@@ -24,14 +24,12 @@ function HomeTemplate({
   SectionFourteen,
   Footer,
 }) {
-  console.log("SectionTwo : ", SectionTwo);
-
   return (
     <>
       {Header && <Header />}
       <StyledMain>
         {FloatingImage && <FloatingImage />}
-        <AtomContainer maxWidth={73}>
+        <AtomContainer maxWidth={75.4}>
           <>
             {SectionOne && (
               <section id="section-1">
