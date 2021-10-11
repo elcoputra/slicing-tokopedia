@@ -23,10 +23,24 @@ First install :
 yarn install
 ```
 
-First, run the development server:
+then, run the development server:
 
 ```bash
 yarn dev
+```
+
+=====================================================
+
+for lint test
+
+```bash
+yarn lint
+```
+
+for testing
+
+```bash
+yarn test
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

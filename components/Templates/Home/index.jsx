@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { StyledMain } from "@/components/Templates/Home/style";
+
 import AtomContainer from "@/components/Atoms/Container";
 
 function HomeTemplate({
   Header = () => <></>,
+  FloatingImage = () => <></>,
   SectionOne = () => <></>,
   SectionTwo = () => <></>,
   SectionThree = () => <></>,
@@ -24,7 +27,8 @@ function HomeTemplate({
   return (
     <>
       <Header />
-      <main>
+      <StyledMain>
+        <FloatingImage />
         <AtomContainer maxWidth={73}>
           <>
             <section id="section-1">
@@ -71,7 +75,7 @@ function HomeTemplate({
             </section>
           </>
         </AtomContainer>
-      </main>
+      </StyledMain>
       <Footer />
     </>
   );
@@ -79,6 +83,7 @@ function HomeTemplate({
 
 HomeTemplate.propTypes = {
   Header: PropTypes.func,
+  FloatingImage: PropTypes.func,
   SectionOne: PropTypes.func,
   SectionTwo: PropTypes.func,
   SectionThree: PropTypes.func,
