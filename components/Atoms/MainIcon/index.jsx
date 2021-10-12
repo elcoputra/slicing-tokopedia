@@ -8,6 +8,7 @@ function MainIcon({
   size = "sm",
   marginRight = 0,
   testId = "",
+  style,
 }) {
   const [iconSize, setIconSize] = useState({ width: 20, height: 20 });
   const [iconPosition, setIconPosition] = useState({ x: 0, y: 0 });
@@ -70,6 +71,7 @@ function MainIcon({
       iconSize={iconSize}
       iconPosition={iconPosition}
       marginRight={marginRight}
+      style={style}
     />
   );
 }
@@ -89,6 +91,7 @@ MainIcon.propTypes = {
   ]),
   marginRight: PropTypes.number,
   testId: PropTypes.string,
+  style: PropTypes.object,
 };
 
 export default MainIcon;

@@ -3,6 +3,8 @@ import Image from "next/image";
 
 import AtomImage from "@/components/Atoms/Image";
 
+import MoleculeCarousel from "@/components/Molecules/Carousel";
+
 import OrganismHeader from "@/components/Organisms/Header";
 
 import TemplateHome from "@/components/Templates/Home";
@@ -32,7 +34,51 @@ export default function Home() {
             href="/"
           />
         )}
+        SectionOne={(show = true) => (
+          <div>
+            <MoleculeCarousel
+              loop={true}
+              slidesPerView={1}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              containerBorderRadius={12}
+              content={topCarousel}
+              pagination
+            />
+          </div>
+        )}
       />
     </>
   );
 }
+
+const topCarousel = [
+  {
+    component: (
+      <AtomImage
+        position="static"
+        withContainer
+        alt="1.webp"
+        imagePath="/assets/images/top-baner/1.webp"
+        href="/"
+      />
+    ),
+    heightRoot: 302,
+    widthRoot: null,
+  },
+  {
+    component: (
+      <AtomImage
+        position="static"
+        withContainer
+        alt="2.webp"
+        imagePath="/assets/images/top-baner/2.webp"
+        href="/"
+      />
+    ),
+    heightRoot: 302,
+    widthRoot: null,
+  },
+];

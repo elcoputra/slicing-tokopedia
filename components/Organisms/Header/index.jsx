@@ -6,17 +6,20 @@ import { HeaderWrapper } from "@/components/Organisms/Header/style";
 import AtomContainer from "@/components/Atoms/Container";
 
 import MoleculeAdditionalLinkHeader from "@/components/Molecules/AdditionalLinkHeader";
+import MoleculeContentHeader from "@/components/Molecules/ContentHeader";
 
 function Header() {
   return (
     <HeaderWrapper>
-      <AtomContainer maxWidth="none">
+      <AtomContainer maxWidth="none" direction="column" height="100%">
         <MoleculeAdditionalLinkHeader
           space={4}
           icon="phone"
           size="sm"
           textLink="Download Tokopedia App"
+          position="fixed"
         />
+        <MoleculeContentHeader directionWrapper="row" />
       </AtomContainer>
     </HeaderWrapper>
   );

@@ -6,4 +6,5 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   max-width: ${({ maxWidth }) => maxWidth}rem;
   width: ${({ width }) => width};
+  height: ${({ height }) => height};
 `;
