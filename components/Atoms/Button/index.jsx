@@ -10,6 +10,8 @@ function Button({
   borderRadius = "0px",
   height = "10px",
   width = "10x",
+  margin = "1px 8px 0 10px",
+  backgroundColor,
 }) {
   return (
     <>
@@ -18,12 +20,20 @@ function Button({
           borderRadius={borderRadius}
           height={height}
           width={width}
+          margin={margin}
+          backgroundColor={backgroundColor}
         >
           {children || text}
         </ButtonRegular>
       ) : (
         component === "div" && (
-          <ButtonDiv borderRadius={borderRadius} height={height} width={width}>
+          <ButtonDiv
+            borderRadius={borderRadius}
+            height={height}
+            width={width}
+            margin={margin}
+            backgroundColor={backgroundColor}
+          >
             {children || text}
           </ButtonDiv>
         )
@@ -39,6 +49,8 @@ Button.propTypes = {
   borderRadius: PropTypes.string,
   height: PropTypes.string,
   width: PropTypes.string,
+  margin: PropTypes.string,
+  backgroundColor: PropTypes.string,
 };
 
 export default Button;
