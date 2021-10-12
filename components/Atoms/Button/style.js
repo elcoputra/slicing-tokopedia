@@ -16,8 +16,9 @@ export const ButtonDiv = styled.div`
   justify-content: center;
   display: flex;
   cursor: pointer;
-  margin: 1px 8px 0 10px;
+  margin: ${({ margin }) => margin};
   border-radius: ${({ borderRadius }) => borderRadius};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   &:hover {
     color: ${({ theme }) => theme.colors.textPrimary};
     background-color: ${({ theme }) => theme.colors.backgroundSecondary};

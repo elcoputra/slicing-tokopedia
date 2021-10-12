@@ -1,13 +1,14 @@
 import styled from "@emotion/styled";
 
 export const Wrapper = styled.div`
+  width: 96%;
+  left: 32px;
   display: flex;
   height: 56px;
-  align-items: center;
-  padding: 0px 32px;
-  direction: ${({ direction }) => direction};
+  top: 30px;
   position: fixed;
-  top : 32px
+  align-items: center;
+  direction: ${({ direction }) => direction};
 `;
 
 export const ContainerButtonCategory = styled.div`
@@ -22,5 +23,15 @@ export const ContainerButtonBucket = styled.div`
   display: flex;
   align-items: center;
   margin: 0 0 0 21px;
+`;
 
+export const WrapperSearch = styled.div`
+  width: 68%;
+  display: flex;
+  width: 63%;
+  height: 56px;
+  min-width: 150px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
 `;
